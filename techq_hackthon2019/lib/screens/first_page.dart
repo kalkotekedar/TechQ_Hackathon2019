@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:techq_hackthon2019/util/constants.dart';
-import 'package:techq_hackthon2019/widgets/app_bar.dart';
-import 'dart:async';
-import 'package:http/http.dart' as http;
+import 'package:techq_hackthon2019/bloc/question_block.dart';
+import 'package:techq_hackthon2019/models/question.dart';
 
 class FirstPage extends StatefulWidget {
   @override
@@ -10,16 +8,40 @@ class FirstPage extends StatefulWidget {
 }
 
 class _FirstPageState extends State<FirstPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: appBar(T_app_name),
-      body: Container(
-      )
+  Widget quesCardView(Questions q) {
+    return Card(
+      child: Row(
+        children: <Widget>[Text(q.id.toString())],
+      ),
     );
   }
 
+  Widget buildList(AsyncSnapshot<List<Questions>> snapshot) {
+    return ListView.builder(
+        itemCount: snapshot.data.length,
+        itemBuilder: (BuildContext context, int index) {
+          return quesCardView(snapshot.data[index]);
+        });
+  }
 
-      
-
+  @override
+  Widget build(BuildContext context) {
+    quesBloc.fetchQuestions(context);
+    return Scaffold(
+      body: StreamBuilder(
+        stream: quesBloc.allQuestions,
+        builder: (context, AsyncSnapshot<List<Questions>> snapshot) {
+          if (snapshot.hasData) {
+            if (snapshot.data.length == 0)
+              return Center(child: Text('No Questions found'));
+            else
+              return buildList(snapshot);
+          } else if (snapshot.hasError) {
+            return Text(snapshot.error.toString());
+          }
+          return Center(child: CircularProgressIndicator());
+        },
+      ),
+    );
+  }
 }
