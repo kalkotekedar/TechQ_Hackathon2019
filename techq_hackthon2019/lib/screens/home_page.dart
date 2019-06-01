@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:techq_hackthon2019/screens/first_page.dart';
 import 'package:techq_hackthon2019/util/constants.dart';
 import 'package:techq_hackthon2019/util/style.dart';
 import 'package:techq_hackthon2019/widgets/app_bar.dart';
@@ -36,7 +37,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: Container(),
+      body: FirstPage(),
     );
   }
 }
