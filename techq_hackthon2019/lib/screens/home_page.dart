@@ -12,30 +12,30 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(T_app_name),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            UserAccountsDrawerHeader(
-              accountName: Text(T_app_name),
-              accountEmail: Text(T_app_name),
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.white,
-                child: Text(
-                  T_app_name,
-                  style: TextStyle(fontSize: 20.0),
-                ),
-              ),
-            ),
-            ListTile(
-              title: Text(
-                "Home",
-              ),
-              leading: Icon(Icons.home),
-            ),
-          ],
-        ),
-      ),
+      // appBar: appBar(T_app_name),
+      // drawer: Drawer(
+      //   child: ListView(
+      //     children: <Widget>[
+      //       UserAccountsDrawerHeader(
+      //         accountName: Text(T_app_name),
+      //         accountEmail: Text(T_app_name),
+      //         currentAccountPicture: CircleAvatar(
+      //           backgroundColor: Colors.white,
+      //           child: Text(
+      //             T_app_name,
+      //             style: TextStyle(fontSize: 20.0),
+      //           ),
+      //         ),
+      //       ),
+      //       ListTile(
+      //         title: Text(
+      //           "Home",
+      //         ),
+      //         leading: Icon(Icons.home),
+      //       ),
+      //     ],
+      //   ),
+      // ),
       body: FirstPage(),
     );
   }

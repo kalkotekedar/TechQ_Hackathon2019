@@ -22,4 +22,15 @@ class QuestionService {
       }).catchError((onError) {
         throw Exception('Failed to load Questions');
       });
+
+  // http.get(quesUrl).then((filedata) {
+  //   if (filedata != null && filedata.statusCode == 200) {
+  //     final jsonResponse = json.decode(filedata.body);
+  //     QuestionData questions = QuestionData.fromJson(jsonResponse);
+  //     return questions.questions;
+  //   } else
+  //     throw Exception('Failed to load Questions');
+  // }).catchError((onError) {
+  //   throw Exception('Failed to load Questions');
+  // });
 }
