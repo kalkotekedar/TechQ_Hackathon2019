@@ -43,7 +43,7 @@ class Questions {
   Questions.fromJson(Map<String, dynamic> json) {
     id = json['question_id'];
     score = json['score'];
-    title = json['vote_count'];
+    title = json['title'];
     ansCount = json['answer_count'];
     viewCount = json['view_count'];
     ansLink = json['link'];
@@ -55,7 +55,7 @@ class Questions {
     final Map<String, dynamic> data = Map<String, dynamic>();
     data['question_id'] = this.id;
     data['score'] = this.score;
-    data['vote_count'] = this.title;
+    data['title'] = this.title;
     data['answer_count'] = this.ansCount;
     data['view_count'] = this.viewCount;
     data['link'] = this.ansLink;
