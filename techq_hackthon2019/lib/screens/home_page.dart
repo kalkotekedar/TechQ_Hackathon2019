@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:techq_hackthon2019/util/constants.dart';
+import 'package:techq_hackthon2019/util/style.dart';
 import 'package:techq_hackthon2019/widgets/app_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -27,7 +28,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             ListTile(
-              title: Text("Home"),
+              title: Text(
+                "Home",
+              ),
               leading: Icon(Icons.home),
             ),
           ],
