@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:techq_hackthon2019/screens/first_page.dart';
+import 'package:techq_hackthon2019/screens/home_page.dart';
 import 'package:techq_hackthon2019/util/color.dart';
 import 'package:techq_hackthon2019/util/constants.dart';
-import 'package:techq_hackthon2019/widgets/home_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,15 +16,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: PrimaryColor,
         primaryColorDark: DarkPrimaryColor,
-        buttonColor: TextIcon,
         accentColor: AccentColor,
         primarySwatch: Colors.blue,
       ),
       home: HomePage(),
-      routes: <String, WidgetBuilder>{
-        P_HomeScreen: (BuildContext context) =>
-            HomePage(), // P_SelectExercises: (BuildContext context) => SelectExercises(),
-      },
+      routes: <String, WidgetBuilder>{},
     );
   }
 }
